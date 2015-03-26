@@ -69,14 +69,10 @@ blog_posts = [
 # store each of the unique tags of all the `blog_posts` inside a variable
 # called `tags`.
 
-tags = []
 
-blog_posts.map do |post| 
-  tags << post[:tags]
-end
 
-tags = tags.flatten
-tags = tags.uniq
+tags = blog_posts.map {|post| post[:tags]}.flatten.uniq
+
 
 # There shouldn't be any need to edit anything below this line
 
